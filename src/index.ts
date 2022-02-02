@@ -9,16 +9,21 @@ import {Socios} from "./entity/Socios";
 
 
 import  cors from 'cors';
-import * as helmet from 'helmet';
+import  helmet from 'helmet';
+
 
 
 
 const app: Application = express();
+app.use(cors());
+app.use(helmet());
+
+app.use(express.json());
 
 app.set("port", process.env.PORT || 3000);
 
 app.get("/", (_req: Request, res: Response) => {
-  res.json({ message: "Hello world! mercoles 3" });
+  res.json({ message: "Hello world! mercoles 4" });
 });
 
 app.listen(app.get("port"), () => {
